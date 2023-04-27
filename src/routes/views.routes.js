@@ -53,20 +53,10 @@ router.get('/pwdrecover/:id', async (req, res) => {
     const request = await PasswordRecoveryValidator.linkValidation(req);
     
     if(!request){
-        return res.redirect('/pwdrecover/expired')
+        return res.render('passwordReqExpired')
+    }else{
+        res.render('newPassword', {email: request.email})
     }
-
-    res.render('newPassword', { email: request.user })
 })
-
-// -- password recovery link expired
-router.get('/pwdrecover/expired', async (req, res) => {
-    res.render('passwordReqExpired')
-})
-
-
-
-
-
 
 export default router;

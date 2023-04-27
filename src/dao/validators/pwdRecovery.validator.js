@@ -32,12 +32,8 @@ class PasswordRecoveryValidator{
         const id = req.params.id;
         req.logger.debug(`The request link is ${id}`)
 
-        const request = await PasswordRecoveryService.findPasswordRequest(id);
-        req.logger.debug(`The request ${!request ? 'does not exist or expired' : 'exists'}`)
+        const request = await PwdRecoveryDao.findPasswordRequest(id);
 
-        if(!request){
-            return null;
-        }
         return request;
     }
 

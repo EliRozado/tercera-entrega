@@ -4,7 +4,7 @@ export default class PasswordRecoveryRepository{
     }
 
     findPasswordRequest(id){
-        return this.dao.getByID(id)
+        return this.dao.getByID(id);
     }
 
     createLink(user_email){

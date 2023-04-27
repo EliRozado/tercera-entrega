@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose';
 
-const pwdRecoveryCollection = 'pwdRecovery'
+const pwdRecoveryCollection = 'pwdRecover'
 
 const pwdRecoverySchema = new Schema({
     user: { type: String, required: true },
